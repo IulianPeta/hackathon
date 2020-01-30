@@ -4,6 +4,9 @@ class main extends page
 	function display()
 	{
 		$main_v=new main_v();
+    $test_runs_m=new test_runs_m();
+    $rows=$test_runs_m->getRows();
+    $main_v->addToInput('test_runs',$rows);
 		$main_v->display();
 	}
 	function add()

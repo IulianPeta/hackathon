@@ -9,7 +9,7 @@ class test_runs_m extends page_m
 {
   function getRows()
   {
-    $rows=$this->db->select('test_runs','*',null,'tst_name,tr_date_edit','tests','tst_name','tr_tst_id=tst_id','right join');
+    $rows=$this->db->select('test_runs','*',null,'tst_class_name,tr_date_edit','tests','tst_class_name','tr_tst_id=tst_id','right join');
     return $rows;
   }
   function insert(int $tr_tst_id, string $tr_name,string $tr_runtime,int $tr_status,?string $tr_error_msg=null,?string $tr_error_type=null,?string $tr_sys_out=null,?string $tr_sys_err=null)

@@ -7,6 +7,11 @@
  */
 class tests_m extends page_m
 {
+  function getRows()
+  {
+    $rows=$this->db->select('tests','*',null,'tst_class_name');
+    return $rows;
+  }
   function insert(string $tst_class_name)
   {
     $param["tst_class_name"]=$tst_class_name;
