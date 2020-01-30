@@ -9,7 +9,12 @@
     <title>Automation Reports</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="tablestyle.css">
+    <script src="main.js"></script>
+    <script src="dataTables.js"></script>
+    <script src="dataTablesBootstrap.js"></script>
+    <script src="jquery-3.3.1.js"></script>
 </head>
+
 <body>
     <h1> Automation Reports </h1>
 
@@ -22,7 +27,7 @@
 
         
         
-    <table id="example" class="table table-striped table-bordered" style="width:100%">
+    <table id="example" class="table table-striped table-bordered" style="width:50%">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -502,5 +507,8 @@
                 </tr>
             </tfoot>
         </table>
+
+
+
 </body>
 </html>
