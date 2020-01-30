@@ -7,5 +7,7 @@
  */
 interface constants
 {
-  const ROWS_PER_PAGE=50;  
+  const ROWS_PER_PAGE=50;
+  const STORAGE="storage/";
+  const LOCAL_PATH="D:/wamp64/www/hackathon/server/"; //to be changed when moved on live server
 }

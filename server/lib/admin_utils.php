@@ -241,6 +241,24 @@ final class admin_utils
             $additional_ok=false;
           }
         break;
+        case "xml":
+          if($FILE['size']!=0&&preg_match('/(\.xml)$/',strtolower($FILE['name'])))
+          {
+            if(preg_match('/(application\/xml)|(text\/xml)/',$mimetype))
+            {
+              $additional_ok=true;
+            }
+            else
+            {
+              $additional_ok=false;
+              //die("Mimetype bad ".$mimetype);
+            }
+          }
+          else
+          {
+            //die("Extension bad");
+          }
+        break;
         case "documents":
           if($FILE['size']!=0&&preg_match('/(\.pdf)|(\.zip)$/',strtolower($FILE['name'])))
           {

@@ -437,14 +437,29 @@ final class Db
       foreach($fieldlist as $column=>$value)
       {
         $param_name=":param".$i;
-        $param_values[$param_name]=strip_tags(trim($value));
-        if($param_values[$param_name]==null)
+        if (is_array($value))
         {
-          $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          $param_values[$param_name]=strip_tags(trim($value['value']));
+          if($param_values[$param_name]==null)
+          {
+            $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          }
+          else
+          {
+            $true_query->bindParam($param_name,$param_values[$param_name],$value['type']);
+          }
         }
         else
         {
-          $true_query->bindParam($param_name,$param_values[$param_name]);
+          $param_values[$param_name]=strip_tags(trim($value));
+          if($param_values[$param_name]==null)
+          {
+            $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          }
+          else
+          {
+            $true_query->bindParam($param_name,$param_values[$param_name]);
+          }
         }
         $i=$i+1;
       }
@@ -627,14 +642,29 @@ final class Db
       foreach($values as $key=>$value)
       {
         $param_name=":value".$i;
-        $actual_values[$i]=strip_tags(trim($value));
-        if($actual_values[$i]==null)
+        if (is_array($value))
         {
-          $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          $actual_values[$i]=strip_tags(trim($value['value']));
+          if($actual_values[$i]==null)
+          {
+            $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          }
+          else
+          {
+            $true_query->bindParam($param_name,$actual_values[$i],$value['type']);
+          }
         }
         else
         {
-          $true_query->bindParam($param_name,$actual_values[$i]);
+          $actual_values[$i]=strip_tags(trim($value));
+          if($actual_values[$i]==null)
+          {
+            $true_query->bindValue($param_name,null,PDO::PARAM_NULL);
+          }
+          else
+          {
+            $true_query->bindParam($param_name,$actual_values[$i]);
+          }
         }
         $i=$i+1;
       }
