@@ -44,3 +44,27 @@ function formAjax(req, formID, divID, callback) {
         }
     });
 }
+function formAjaxUpload(req, formID, divID, callback) {
+  if (!formID) return false;
+  var form = $("#" + formID)[0];
+  var formData = new FormData(form);
+  var resp = $.ajax({
+                      url: req,
+                      data: formData,
+                      async: true,
+                      type: 'POST',
+                      cache: false,
+                      processData: false,
+                      contentType: false
+                    });
+  resp.done(function (msg) {
+    if (divID != null && divID != "" && divID != " ") {
+      $("#" + divID).html(msg);
+      if (callback != null && callback != '' && callback != 'undefined') {
+        console.log("Callback start");
+        callback(msg, divID);
+        console.log("Callback end");
+      }
+    }
+  });
+}

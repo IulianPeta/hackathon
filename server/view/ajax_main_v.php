@@ -4,12 +4,12 @@ final class ajax_main_v extends ajax_page_v
 	function addForm()
 	{
 		?>
-    <form action="index.php" method="post" enctype="multipart/form-data">
+    <form action="index.php" method="post" enctype="multipart/form-data" id="upload_form">
       <input type="hidden" name="page" value="main">
       <input type="hidden" name="action" value="add">
       <div class="form-group">
         <label>XML file</label>
-        <input type="file" accept="text/xml" class="form-control-file" name="xml_file" required="required" title="Jenkins report xml">
+        <input type="file" accept="text/xml" class="form-control-file" name="xml_file" required="required" title="Jenkins report xml" id="xml_file">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Upload</button>

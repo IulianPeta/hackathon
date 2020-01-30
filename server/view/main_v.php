@@ -21,7 +21,7 @@ final class main_v extends page_v
 	function headCustomScripts()
 	{
 	?>
-	<script type="text/javascript" src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<?php
 	}
@@ -48,7 +48,7 @@ final class main_v extends page_v
 		?>
     <div class="card">
       <div class="card-header">
-        <h1>Archived results</h1>
+        <h1>Results</h1>
       </div>
       <div class="card-body" id="upload_table_parent">
         <?php

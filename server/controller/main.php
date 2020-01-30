@@ -94,6 +94,9 @@ class main extends page
     {
       $main_v->addToInput('error',"Empty file");
     }
+    $rows=$test_runs_m->getRows();
+    //print_r($rows);die();
+    $main_v->addToInput('test_runs',$rows);
     $main_v->display();
   }
 }
