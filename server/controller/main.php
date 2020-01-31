@@ -54,7 +54,7 @@ class main extends page
                 }
                 $tst_id=filter_var($tst['tst_id'],FILTER_SANITIZE_NUMBER_INT,FILTER_VALIDATE_INT);
                 $name_array=explode("#",$testcase_attributes->name);
-                $tr_name=filter_var($name_array[0]);
+                $tr_name=filter_var($testcase_attributes->name);
                 if (!empty($name_array[1]))
                 {
                   $tr_date=filter_var($name_array[1],FILTER_SANITIZE_STRING);
