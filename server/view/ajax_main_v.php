@@ -30,6 +30,7 @@ final class ajax_main_v extends ajax_page_v
           <tr>
             <th>Test ID</th>
             <th>Test case</th>
+            <th>Test date</th>
             <th>Runtime</th>
             <th>Success</th>
             <th>Details</th>
@@ -43,6 +44,7 @@ final class ajax_main_v extends ajax_page_v
           <tr>
             <td><?php echo $tr['tst_class_name']?></td>
             <td><?php echo $tr['tr_name']?></td>
+            <td><?php echo $tr['tr_date']?></td>
             <td><?php echo $tr['tr_runtime']?></td>
             <td>
               <?php

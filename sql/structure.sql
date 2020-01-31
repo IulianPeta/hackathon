@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 30, 2020 at 03:31 PM
+-- Generation Time: Jan 31, 2020 at 09:43 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `tests` (
   `tst_date_add` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tst_date_edit` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tst_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=262 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -56,8 +56,9 @@ CREATE TABLE IF NOT EXISTS `test_runs` (
   `tr_error_type` mediumtext,
   `tr_sys_out` mediumtext,
   `tr_sys_err` mediumtext,
+  `tr_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`tr_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=382 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

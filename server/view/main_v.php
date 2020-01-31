@@ -15,14 +15,14 @@ final class main_v extends page_v
 	function headCustomCss()
 	{
 		?>
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
     <?php
 	}
 	function headCustomScripts()
 	{
 	?>
-	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+	  <script type="text/javascript" src="js/main.js"></script>
 	<?php
 	}
 	function sideBar()

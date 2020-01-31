@@ -53,7 +53,16 @@ class main extends page
                   
                 }
                 $tst_id=filter_var($tst['tst_id'],FILTER_SANITIZE_NUMBER_INT,FILTER_VALIDATE_INT);
-                $tr_name=filter_var($testcase_attributes->name);
+                $name_array=explode("#",$testcase_attributes->name);
+                $tr_name=filter_var($name_array[0]);
+                if (!empty($name_array[1]))
+                {
+                  $tr_date=filter_var($name_array[1],FILTER_SANITIZE_STRING);
+                }
+                else
+                {
+                  $tr_date=date("Y-m-d H:i:s"); //if no date, we take upload date
+                }
                 $tr_runtime=filter_var($testcase_attributes->time);
                 $tr_status=1;
                 $tr_error_msg=null;
@@ -72,7 +81,7 @@ class main extends page
                 if (empty($tr_exists))
                 {
                   //does not yet exists, insert in DB
-                  $test_runs_m->insert($tst_id,$tr_name,$tr_runtime,$tr_status,$tr_error_msg,$tr_error_type);
+                  $test_runs_m->insert($tst_id,$tr_name,$tr_runtime,$tr_status,$tr_date,$tr_error_msg,$tr_error_type);
                 }
               }
             }

@@ -1,6 +1,8 @@
 function initPage()
 {
-  $("#report_table").dataTable();
+  $("#report_table").dataTable({
+    "order":[]
+  });
 }
 initPage();
 /*$(document).ready(
