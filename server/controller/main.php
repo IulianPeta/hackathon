@@ -9,6 +9,13 @@ class main extends page
     $main_v->addToInput('test_runs',$rows);
 		$main_v->display();
 	}
+	function rest_add()
+  {
+    $main_v=new ajax_main_v();
+    $tests_m=new tests_m();
+    $test_runs_m=new test_runs_m();
+    print_r($_REQUEST);
+  }
 	function add()
   {
     $main_v=new ajax_main_v();
